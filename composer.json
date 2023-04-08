@@ -1,0 +1,27 @@
+{
+    "name": "tiptone/aydd-schedule",
+    "description": "Are You Down Dog Schedule",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Tiptone\\AyddSchedule\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Brian Tipton",
+            "email": "tiptone@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "tiptone/mvc": "dev-develop",
+        "monolog/monolog": "2.x-dev"
+    },
+    "repositories": {
+        "repo-name": {
+            "type": "vcs",
+            "url": "https://github.com/tiptone/mvc"
+        }
+    }
+}
