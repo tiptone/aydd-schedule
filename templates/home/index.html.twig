@@ -4,11 +4,16 @@
         <div class="callout">
             <div class="grid-x grid-margin-x">
                 <div class="cell small-6">
-                            <span data-toggle="tooltip" title="{{ section.yogaClass.description }}">
-                                {{ section.yogaClass.name }}
-                            </span>
+                    <span data-toggle="tooltip" title="{{ section.yogaClass.description }}">
+                        {{ section.yogaClass.name }}
+                    </span>
                 </div>
-                <div class="cell small-6">{{ section.startTime|date('g:ia') }}</div>
+                <div class="cell small-4">{{ section.startTime|date('g:ia') }}</div>
+                <div class="cell small-2">
+                    <a class="hollow button">
+                        <span class="fi-plus"> </span>
+                    </a>
+                </div>
             </div>
             <!--p>{{ section.id }}</p-->
         </div>

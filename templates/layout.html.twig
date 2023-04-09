@@ -7,12 +7,12 @@
     <title>Schedule</title>
     <link rel="stylesheet" href="/css/foundation.css" />
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css" />
-    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css">
 </head>
 <body>
 <!-- Start Top Bar -->
 <div class="grid-container">
-    <div class="button-group">
+    <div class="button-group float-left">
         <a class="hollow button">
             <span class="fi-home"> </span>
         </a>
@@ -20,10 +20,15 @@
             <span class="fi-arrow-right"> </span>
         </a>
     </div>
+    <div class="float-right">
+        <a class="hollow button float-right">
+            <span class="fi-torso"> </span> Profile
+        </a>
+    </div>
 </div>
 <!-- End Top Bar -->
 
-<br>
+<br><br><br>
 
 <div class="grid-container">
     {{ include(template) }}
@@ -42,46 +47,16 @@
 <script>
     $(document).foundation();
 
-    $("#w-search").autocomplete({
-        open: function(event, ui) {
-            $('.ui-autocomplete').off('mouseenter');
-        },
-        source: "/reviews/autocomplete",
-        minLength: 3,
-        select: function(event, ui) {
-            $.ajax({
-                type: 'POST',
-                url: '/reviews/search',
-                dataType: 'html',
-                data: {
-                    search: ui.item.label
-                },
-                success: function(html) {
-                    $("#target").html(html);
-                    $("#search").val('');
-                    $("#search").blur();
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    console.log(jqXHR);
-                    console.log(textStatus);
-                    console.log(errorThrown);
-                    alert('Doh');
-                }
-            });
-        }
-    });
+    $("#create-form").submit(function (e) {
+        var password = $("#password").val();
+        var password2 = $("#password2").val();
 
-    $("#u-search").autocomplete({
-        open: function(event, ui) {
-            //$('.ui-autocomplete').off('menufocus hover mouseover mouseenter');
-            $('.ui-autocomplete').off('mouseenter');
-        },
-        source: "/reviews/userautocomplete",
-        minLength: 3,
-        select: function(event, ui) {
-            console.log(ui.item.label);
-            window.location.href = '/reviews/reviewer?id=' + ui.item.label;
+        if (password != password2) {
+            console.log('form submitted');
+            alert('Passwords do no match');
+            e.preventDefault();
         }
+
     });
 </script>
 

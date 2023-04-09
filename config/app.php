@@ -15,6 +15,7 @@ use Tiptone\AyddSchedule\Controller\IndexController;
 use Tiptone\AyddSchedule\Controller\AccountController;
 use Tiptone\AyddSchedule\Service\ClassService;
 use Tiptone\AyddSchedule\Service\SectionService;
+use Tiptone\AyddSchedule\Service\UserService;
 
 return [
     'app_name' => 'Schedule',
@@ -87,6 +88,9 @@ return [
         SectionService::class => function(ContainerInterface $container) {
             return new SectionService($container->get('EntityManager'));
         },
+        UserService::class => function(ContainerInterface $container) {
+            return new UserService($container->get('EntityManager'));
+        },
         IndexController::class => function(ContainerInterface $container) {
             $controller = new IndexController(
                 $container->get(ClassService::class),
@@ -97,7 +101,7 @@ return [
             return $controller;
         },
         AccountController::class => function(ContainerInterface $container) {
-            $controller = new AccountController();
+            $controller = new AccountController($container->get(UserService::class));
             $controller->setLogger($container->get(LoggerInterface::class));
 
             return $controller;
