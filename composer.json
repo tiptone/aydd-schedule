@@ -5,7 +5,10 @@
     "autoload": {
         "psr-4": {
             "Tiptone\\AyddSchedule\\": "src/"
-        }
+        },
+        "files": [
+            "secret.php"
+        ]
     },
     "authors": [
         {
@@ -16,12 +19,18 @@
     "minimum-stability": "dev",
     "require": {
         "tiptone/mvc": "dev-develop",
-        "monolog/monolog": "2.x-dev"
+        "monolog/monolog": "2.x-dev",
+        "doctrine/orm": "2.15.x-dev",
+        "symfony/cache": "5.4.x-dev",
+        "doctrine/annotations": "2.0.x-dev"
     },
     "repositories": {
         "repo-name": {
             "type": "vcs",
             "url": "https://github.com/tiptone/mvc"
         }
+    },
+    "require-dev": {
+        "phing/phing": "dev-main"
     }
 }

@@ -1,0 +1,55 @@
+{% for day, sections in schedule %}
+    <h3>{{ day }}</h3>
+    {% for section in sections %}
+        <div class="callout">
+            <div class="grid-x grid-margin-x">
+                <div class="cell small-6">
+                            <span data-toggle="tooltip" title="{{ section.yogaClass.description }}">
+                                {{ section.yogaClass.name }}
+                            </span>
+                </div>
+                <div class="cell small-6">{{ section.startTime|date('g:ia') }}</div>
+            </div>
+            <!--p>{{ section.id }}</p-->
+        </div>
+    {% endfor %}
+{% endfor %}
+
+
+
+<!--div class="tabs-content" data-tabs-content="classes-tabs">
+    <div class="tabs-panel is-active" id="classes"-->
+
+        <!--div class="grid-x grid-margin-x">
+            <div class="cell small-6 text-right">Id</div>
+            <div class="cell small-6">{{ section.id }}</div>
+        </div>
+        <div class="grid-x grid-margin-x">
+            <div class="cell small-6 text-right">Class</div>
+            <div class="cell small-6">{{ section.yogaClass.name }}</div>
+        </div>
+        <div class="grid-x grid-margin-x">
+            <div class="cell small-6 text-right">Start Time</div>
+            <div class="cell small-6">{{ section.startTime|date("m/d/Y g:ia") }}</div>
+        </div-->
+        <!--
+        {% for class in classes %}
+            <div class="grid-x grid-margin-x">
+                <div class="cell small-6 text-right">
+                    {{ class.name }} ({{ class.id }})
+                </div>
+                <div class="cell small-6">
+                    {{ class.description }}
+                </div>
+            </div>
+        {% endfor %}
+        <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nib
+            porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
+            Suspendisse dictum feugiat nisl ut dapibus.</p-->
+    <!--/div>
+    <div class="tabs-panel" id="mine">
+        <p>Suspendisse dictum feugiat nisl ut dapibus. Vivamus hendrerit arcu sed erat molestie vehicula. Ut in
+            nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu
+            tellus rhoncus ut eleifend nibh porttitor.</p>
+    </div>
+</div-->
