@@ -5,28 +5,47 @@
                 <h3>Are You Down Dog Account</h3>
                 <div class="grid-x">
                     <div class="cell small-6">
-                        <input type="text" name="fname" placeholder="First Name">
+                        <input type="text" name="fname" placeholder="First Name" required>
                     </div>
                     <div class="cell small-6">
-                        <input type="text" name="lname" placeholder="Last Name">
+                        <input type="text" name="lname" placeholder="Last Name" required>
                     </div>
                 </div>
                 <div class="grid-x">
                     <div class="cell small-12">
-                        <input type="text" name="email" placeholder="Email">
+                        <input type="email" name="email" placeholder="Email" required>
                     </div>
                 </div>
                 <div class="grid-x">
                     <div class="cell small-12">
-                        <input type="text" name="phone" placeholder="Cell Phone">
+                        <input
+                            type="tel"
+                            name="phone"
+                            placeholder="Cell Phone"
+                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                            aria-describedby="phoneHelpText"
+                            required>
+                        <p class="help-text" id="phoneHelpText">Format: 123-456-7890</p>
                     </div>
                 </div>
                 <div class="grid-x">
                     <div class="cell small-6">
-                        <input type="text" id="password" name="password" placeholder="Password">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Password"
+                            minlength="11"
+                            required>
                     </div>
                     <div class="cell small-6">
-                        <input type="text" id="password2" name="password2" placeholder="Confirm">
+                        <input
+                            type="password"
+                            id="password2"
+                            name="password2"
+                            placeholder="Confirm"
+                            minlength="11"
+                            required>
                     </div>
                 </div>
                 <div class="grid-x align-right">
